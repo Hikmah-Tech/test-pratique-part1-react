@@ -6,8 +6,13 @@ nav {
 #weather-container {
   width: 50%;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 #weather-icon {
   display: flex;
@@ -41,4 +46,36 @@ button {
   border: 3px blueviolet solid;
   padding: 8px;
   color: white;
+}
+
+
+/* --------------------------------------------------------------------------------------- */
+
+
+
+/* Add to your existing style.css */
+
+
+
+#weather-details p {
+  color: #333;
+  font-size: 0.9rem;
+  margin-top: 5px;
+}
+
+input::placeholder {
+  color: rgba(138, 43, 226, 0.5);
+  font-weight: normal;
+}
+
+button:hover {
+  background-color: #6a0dad;
+  border-color: #6a0dad;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.description {
+  text-transform: capitalize;
+  color: #555;
 }

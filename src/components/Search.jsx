@@ -1,13 +1,29 @@
-function Search() {
+import { useState } from "react";
+
+function Search({ onSearch }) {
+  const [city, setCity] = useState("");
+
+
+  // Function to handle the submit
+  const handleSubmit = (e) => {
+    // pREVENT THE DEFAUSLT BEHANVOIT OF THE FORM.
+    
+    e.preventDefault();
+    if (city.trim()) {
+      onSearch(city);
+      setCity(""); // Clear input after search
+    }
+  };
+
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <input
         type="text"
-        name="city"
-        id="city-data"
-        placeholder="search city name"
+        value={city}
+        onChange={(e) => setCity(e.target.value)}
+        placeholder="Search city name (e.g. London)"
       />
-      <button type="button">Search</button>
+      <button type="submit">Search</button>
     </form>
   );
 }
